@@ -71,7 +71,7 @@ public class CaptureThread extends Thread {
             Thread.sleep(100L);
             continue;
           } catch (InterruptedException e) {
-            e.printStackTrace();
+            e.printStackTrace();                
             break;
           }  
         if (Reader.ReaderStatus.READY == rs.status || Reader.ReaderStatus.NEED_CALIBRATION == rs.status) {

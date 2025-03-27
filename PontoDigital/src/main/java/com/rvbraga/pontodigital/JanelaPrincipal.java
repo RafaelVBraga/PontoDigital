@@ -29,7 +29,7 @@ public class JanelaPrincipal extends JFrame {
     	this.servico = servico;
     
         setTitle("Sistema de Ponto Digital");
-        setSize(700, 600);
+        setSize(1200,600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 

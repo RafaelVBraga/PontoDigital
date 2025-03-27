@@ -37,6 +37,10 @@ public class PontoDigitalService {
 		
 	}
 	
+	public Usuario findByMatricula(String matricula) {
+		return usuarioRepo.findByMatricula(matricula);
+	}
+	
 	public Optional<Usuario> findById(Long id) {
 		return usuarioRepo.findById(id);
 	}
@@ -48,15 +52,16 @@ public class PontoDigitalService {
 	}
 	public Usuario buscarUsuarioPorDigital(Fid digitalCapturada) {
 	    Usuario usuario = null;
-	    System.out.println("Entrou no serviço!");
+	    
 	    List<Usuario> usuarios = usuarioRepo.findAll();
 	    System.out.println(usuarios.size());
 	    
 	    if(usuarios!= null)
 	    	for(Usuario usuarioIt : usuarios) {
 	    		System.out.println(usuarioIt.getNome());
-	    		if(comparar(usuarioIt.getDigital(),digitalCapturada)) {
-	    			usuario = usuarioIt;
+	    		if(usuarioIt.getDigital()!=null)
+	    			if(comparar(usuarioIt.getDigital(),digitalCapturada)) {
+	    				usuario = usuarioIt;
 	    			break;
 	    		}
 	    }	    	
@@ -125,7 +130,7 @@ public class PontoDigitalService {
             } 
           } catch (UareUException e) {
             MessageBox.DpError("Engine.CreateFmd()", e);
-            System.out.println();
+            System.out.println(e.getMessage());
             return false;
           } 
     }

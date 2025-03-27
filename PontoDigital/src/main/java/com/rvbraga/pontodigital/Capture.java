@@ -39,7 +39,7 @@ public class Capture extends JPanel implements ActionListener {
     int vgap = 5;
     BoxLayout layout = new BoxLayout(this, 1);
     setLayout(layout);
-    this.m_image = new ImagePanel();
+    this.m_image = new ImagePanel();   
     Dimension dm = new Dimension(300, 50);
     this.m_image.setPreferredSize(dm);
     this.mensagem = new JLabel("Capturando...");

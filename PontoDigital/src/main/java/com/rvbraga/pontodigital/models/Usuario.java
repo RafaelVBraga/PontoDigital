@@ -1,5 +1,6 @@
 package com.rvbraga.pontodigital.models;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -27,6 +28,18 @@ public class Usuario {
 	    private String orgao;
 	    
 	    private String setor;
+	    
+	    private String cargo;
+	    
+	    private String natureza;
+	    
+	    private Integer cargaHoraria;
+	    
+	    private LocalDate dataAdmissao;
+	    
+	    private String situacao;
+	    
+	    private String digitalBase64;
 	    
 	    @ManyToMany
 	    @JoinTable(
